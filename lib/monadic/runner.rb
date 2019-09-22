@@ -7,9 +7,9 @@ module Monadic
     include Dry::Monads[:list]
     extend Dry::Initializer[undefined: false]
     param :notifications
-    
+
     def call
-      notifications.instrument("all.executed", object: self) do
+      notifications.instrument('all.executed', object: self) do
         one   = Task[:io] { First::Base.new(notifications).call }
         two   = Task[:io] { Second::Base.new(notifications).call }
         three = Task[:io] { Third::Base.new(notifications).call }

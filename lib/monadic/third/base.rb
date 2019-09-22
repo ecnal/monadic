@@ -5,11 +5,11 @@ module Monadic
       param :notifications
 
       def call
-      	notifications.instrument("third.executed", object: self) do
+        notifications.instrument('third.executed', object: self) do
           sleep 10
           { api: 'Third', data: { third_name: 'Trifectus' } }
         end
       end
     end
-  end  
+  end
 end

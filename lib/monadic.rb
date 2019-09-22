@@ -1,6 +1,6 @@
 require 'dry-initializer'
 require 'dry/monitor/notifications'
-require "monadic/version"
+require 'monadic/version'
 require 'monadic/runner'
 require 'monadic/first/base'
 require 'monadic/second/base'
@@ -11,10 +11,10 @@ module Monadic
     @__notifications__ ||= Dry::Monitor::Notifications.new(:monadic)
   end
 
-  notifications.register_event("all.executed")
-  notifications.register_event("first.executed")
-  notifications.register_event("second.executed")
-  notifications.register_event("third.executed")
+  notifications.register_event('all.executed')
+  notifications.register_event('first.executed')
+  notifications.register_event('second.executed')
+  notifications.register_event('third.executed')
 
   class Logger
     def on_all_executed(object:, time:)
